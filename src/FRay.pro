@@ -8,7 +8,8 @@ SOURCES += \
     geometry/sphere.cpp \
     rendering/scene.cpp \
     rendering/ray.cpp \
-    rendering/camera.cpp
+    rendering/camera.cpp \
+    math/math.cpp
 
 HEADERS += \
     math/math.h \

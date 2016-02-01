@@ -15,6 +15,7 @@ private:
     Scene* scene;
 
 public:
+    Camera();
     Camera(Scene* scene, const Vec3& position, const Vec3& lookAt, const Vec3& up, double fovy);
 };
 

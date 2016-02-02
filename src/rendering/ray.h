@@ -1,11 +1,16 @@
 #ifndef RAY_H
 #define RAY_H
 
+#include "math/math.h"
 
 class Ray
-{
+{    
 public:
-    Ray();
+    Vec3 origin;
+    Vec3 direction;
+
+    Ray() {}
+    Ray(const Vec3& origin, const Vec3& direction) : origin(origin), direction(direction) {}
 };
 
 #endif // RAY_H

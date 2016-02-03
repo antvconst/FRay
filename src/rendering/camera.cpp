@@ -2,18 +2,23 @@
 
 Camera::Camera() {}
 
-Camera::Camera(Scene* scene, const Vec3& position, const Vec3& screen_center, const Vec3& up, double fovy, int h, int w) {
-    this->scene = scene;
-    this->position = position;
+Camera::Camera(const Vec3& position, const Vec3& screen_center, const Vec3& up, double fovy, int height, int width) :
+    position(position), height(height), width(width), hh(height/2), hw(width/2) {
 
-    this->w = (position-screen_center).normalize();
-    this->u = cross(up, this->w).normalize();
-    this->v = cross(this->w, this->u);
+    this->w = (position-screen_center).normalize(); // conventionally looking down -Z
+    this->u = cross(up, this->w).normalize(); // X
+    this->v = cross(this->w, this->u); // Y
 
-    this->height = h;
-    this->width = w;
-    this->ratio = w/h;
+    double th_fovy = tan(0.5*fovy);
+    double th_fovx = th_fovy * (width/height);
 
-    this->th_fovy = tan(fovy/2);
-    this->th_fovx = this->th_fovy * this->ratio;
+    this->alpha = th_fovx/hw; // pixel width
+    this->beta = th_fovy/hh; // pixel height
+}
+
+Ray Camera::generate_ray(int i, int j) {
+    Ray r;
+    r.origin = position;
+    r.direction = -w + u*(((j+0.5)-hw)*alpha) + v*((hh-(i+0.5))*beta);
+    return r;
 }

@@ -6,6 +6,7 @@
 #include "vector.h"
 #include "matrix.h"
 
+typedef Vector<2> Vec2;
 typedef Vector<3> Vec3;
 typedef Vector<4> Vec4;
 typedef Matrix<3> Mat3;

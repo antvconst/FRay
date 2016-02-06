@@ -5,8 +5,6 @@
 #include "math/math.h"
 #include "rendering/ray.h"
 
-class Scene; // forward declaration to avoid mutual inclusion (camera needs only a pointer to the scene)
-
 class Camera
 {
 private:

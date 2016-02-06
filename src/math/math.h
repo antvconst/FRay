@@ -12,6 +12,9 @@ typedef Vector<4> Vec4;
 typedef Matrix<3> Mat3;
 typedef Matrix<4> Mat4;
 
+typedef Vector<2> Sample;
+typedef Vector<3> Color;
+
 Vec3 toVec3(const Vec4& v);
 Vec3 cross(const Vec3& u, const Vec3& v);
 Vec3 dot(const Vec3& u, const Vec3& v);

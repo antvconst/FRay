@@ -9,7 +9,6 @@ SOURCES += \
     rendering/scene.cpp \
     rendering/camera.cpp \
     math/math.cpp \
-    rendering/material.cpp \
     rendering/raytracer.cpp \
     rendering/sampler.cpp
 
@@ -23,7 +22,7 @@ HEADERS += \
     rendering/scene.h \
     rendering/ray.h \
     rendering/camera.h \
-    rendering/material.h \
+    rendering/shading/material.h \
     rendering/raytracer.h \
     rendering/sampler.h
 

@@ -27,7 +27,8 @@ public:
 class DirectionalLight : Light
 {
 public:
-    Light(const Vec3& position, const Color& color)
+    Light(const Vec3& position, const Color& color);
+    double intensity(double distance);
 };
 
 #endif // LIGHT_H

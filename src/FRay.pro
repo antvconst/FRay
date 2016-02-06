@@ -11,7 +11,8 @@ SOURCES += \
     math/math.cpp \
     rendering/raytracer.cpp \
     rendering/sampler.cpp \
-    rendering/shading/light.cpp
+    rendering/shading/light.cpp \
+    rendering/shading/blinnphong.cpp \
 
 HEADERS += \
     math/math.h \
@@ -26,7 +27,8 @@ HEADERS += \
     rendering/shading/material.h \
     rendering/raytracer.h \
     rendering/sampler.h \
-    rendering/shading/light.h
+    rendering/shading/light.h \
+    rendering/shading/blinnphong.h \
 
 QMAKE_CXXFLAGS += -std=c++11 -DNO_FREETYPE -Wunused-parameter
 

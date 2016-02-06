@@ -10,7 +10,8 @@ SOURCES += \
     rendering/camera.cpp \
     math/math.cpp \
     rendering/raytracer.cpp \
-    rendering/sampler.cpp
+    rendering/sampler.cpp \
+    rendering/shading/light.cpp
 
 HEADERS += \
     math/math.h \
@@ -24,7 +25,8 @@ HEADERS += \
     rendering/camera.h \
     rendering/shading/material.h \
     rendering/raytracer.h \
-    rendering/sampler.h
+    rendering/sampler.h \
+    rendering/shading/light.h
 
 QMAKE_CXXFLAGS += -std=c++11 -DNO_FREETYPE -Wunused-parameter
 

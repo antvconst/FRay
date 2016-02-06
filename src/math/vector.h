@@ -54,6 +54,15 @@ public:
             r.mut_el(i) = alpha*el(i);
         return r;
     }
+
+    // Component-wise multiplication
+    Vector<N> operator*(const Vector<N>& v) const {
+        Vector<N> r;
+        for (int i=0; i<N; ++i)
+            r.mut_el(i) = el(i) * v.el(i);
+        return r;
+    }
+
     Vector<N> operator/(double alpha) const {
         return (*this)*(1/alpha);
     }

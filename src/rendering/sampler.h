@@ -12,7 +12,7 @@ private:
     bool finished;
 
 public:
-    Vec2 sample();
+    Sample sample();
     Sampler(int width, int height, int nsamples);
 };
 

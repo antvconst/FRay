@@ -9,7 +9,7 @@ Sampler::Sampler(int width, int height, int nsamples) :
     srand(time(NULL));
 }
 
-Vec2 Sampler::sample() {
+Sample Sampler::sample() {
     if (finished)
         return Vec2(-1.0, 0);
 

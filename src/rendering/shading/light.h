@@ -10,7 +10,7 @@ public:
     Color color;
 
     Light(const Vec3& position, const Color& color);
-    virtual double intensity(double distance);
+    virtual double intensity(double distance) = 0;
 };
 
 class PointLight : Light
@@ -27,7 +27,7 @@ public:
 class DirectionalLight : Light
 {
 public:
-    Light(const Vec3& position, const Color& color);
+    DirectionalLight(const Vec3& position, const Color& color);
     double intensity(double distance);
 };
 

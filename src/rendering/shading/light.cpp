@@ -1,9 +1,7 @@
 #include "light.h"
 
-Light::Light(const Vec3 position, const Color& color) :
+Light::Light(const Vec3& position, const Color& color) :
     position(position), color(color) {}
-
-
 
 PointLight::PointLight(const Vec3& position, const Color& color, const Vec3& attenuation) :
     Light(position, color) {
@@ -19,7 +17,7 @@ double PointLight::intensity(double distance) {
 }
 
 
-DirectionalLight::Light(const Vec3& position, const Color& color) :
+DirectionalLight::DirectionalLight(const Vec3& position, const Color& color) :
     Light(position, color) {}
 
 double DirectionalLight::intensity(double distance) {

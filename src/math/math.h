@@ -15,7 +15,9 @@ typedef Matrix<4> Mat4;
 typedef Vector<2> Sample;
 typedef Vector<3> Color;
 
-Vec3 toVec3(const Vec4& v);
+Vec3 as_vec3(const Vec4& v);
+Vec4 as_vec4(const Vec3& v);
+Vec4 as_point(const Vec3& v);
 Vec3 cross(const Vec3& u, const Vec3& v);
 double dot(const Vec3& u, const Vec3& v);
 Mat3 cprod_matrix(const Vec3& v);

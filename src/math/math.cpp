@@ -1,8 +1,18 @@
 #include "math/math.h"
 
-Vec3 toVec3(const Vec4& v) {
+Vec3 as_vec3(const Vec4& v) {
     return Vec3(v.el(0), v.el(1), v.el(2));
 }
+
+Vec4 as_vec4(const Vec3& v) {
+    return Vec4(v.el(0), v.el(1), v.el(2), 0.0);
+}
+
+
+Vec4 as_point(const Vec3& v) {
+    return Vec4(v.el(0), v.el(1), v.el(2), 1.0);
+}
+
 
 Vec3 cross(const Vec3& u, const Vec3& v) {
     return Vec3(u.el(1)*v.el(2) - v.el(1)*u.el(2),

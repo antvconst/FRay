@@ -18,7 +18,7 @@ Camera::Camera(const Vec3& position, const Vec3& screen_center, const Vec3& up, 
 
 Ray Camera::generate_ray(int i, int j) {
     Ray r;
-    r.origin = position;
+    r.origin = as_point(position);
     r.direction = -w + u*((j-hw)*alpha) + v*((hh-i)*beta);
     return r;
 }

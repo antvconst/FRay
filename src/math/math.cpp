@@ -10,7 +10,7 @@ Vec3 cross(const Vec3& u, const Vec3& v) {
                 u.el(0)*v.el(1) - v.el(0)*u.el(1));
 }
 
-Vec3 dot(const Vec3& u, const Vec3& v) {
+double dot(const Vec3& u, const Vec3& v) {
     return u.el(0)*v.el(0) + u.el(1)*v.el(1) + u.el(2)*v.el(2);
 }
 

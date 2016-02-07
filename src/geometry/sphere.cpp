@@ -5,7 +5,7 @@ Sphere::Sphere(const Vec4& center, double radius) :
 
 bool Sphere::intersect(const Ray& r, LocalGeometry& lgeo) {
     Mat4 TInv = this->transform.inverse();
-    Vec3 d = as_vec3(TInv*as_vec4(r.direction, 0.0));
+    Vec3 d = as_vec3(TInv*as_vec4(r.direction));
     Vec3 P0 = as_vec3(TInv*r.origin);
     Vec3 C = as_vec3(this->center);
 

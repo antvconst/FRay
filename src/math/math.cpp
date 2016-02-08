@@ -38,3 +38,22 @@ Mat3 rotation_matrix(const Vec3& v, double theta) {
     Mat3 V = cprod_matrix(v);
     return Mat3::identity() + (V*V)*(1-cos(theta)) + V*sin(theta);
 }
+
+
+Vec3 barycentric_coordinates(const Vec4& A, const Vec4& B, const Vec4& C, const Vec4& P) {
+    Mat2 T(A.el(0)-C.el(0), B.el(0)-C.el(0),
+           A.el(1)-C.el(1), B.el(1)-C.el(1));
+
+    T.print();
+
+    Vec2 V(P.el(0)-C.el(0),
+           P.el(1)-C.el(1));
+
+    Vec2 R = T.inverse() * V;
+
+    double alpha = R.el(0);
+    double beta = R.el(1);
+    double gamma = 1-alpha-beta;
+
+    return Vec3(alpha, beta, gamma);
+}

@@ -13,6 +13,7 @@ SOURCES += \
     rendering/sampler.cpp \
     rendering/shading/light.cpp \
     rendering/shading/blinnphong.cpp \
+    geometry/triangle.cpp
 
 HEADERS += \
     math/math.h \
@@ -29,6 +30,7 @@ HEADERS += \
     rendering/sampler.h \
     rendering/shading/light.h \
     rendering/shading/blinnphong.h \
+    geometry/triangle.h
 
 QMAKE_CXXFLAGS += -std=c++11 -DNO_FREETYPE -Wunused-parameter
 

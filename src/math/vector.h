@@ -79,6 +79,14 @@ public:
         return (*this) / len();
     }
 
+    bool is_zero() const {
+        for (int i=0; i<N; ++i)
+            if (el(i) != 0.0)
+                return false;
+        return true;
+
+    }
+
     void print() const {
         for (int i=0; i<N; ++i)
             std::cout << el(i) << " ";

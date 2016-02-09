@@ -19,6 +19,7 @@ typedef Vector<3> Color;
 Vec3 as_vec3(const Vec4& v);
 Vec4 as_vec4(const Vec3& v);
 Vec4 as_point(const Vec3& v);
+Mat3 submatrix(const Mat4& m);
 Vec3 cross(const Vec3& u, const Vec3& v);
 double dot(const Vec3& u, const Vec3& v);
 Mat3 cprod_matrix(const Vec3& v);

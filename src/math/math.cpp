@@ -14,6 +14,17 @@ Vec4 as_point(const Vec3& v) {
 }
 
 
+
+Mat3 submatrix(const Mat4& m) {
+    Mat3 r;
+    for (int i=0; i<3; ++i)
+        for (int j=0; j<3; ++j)
+            r.mut_el(i, j) = m.el(i, j);
+
+    return r;
+}
+
+
 Vec3 cross(const Vec3& u, const Vec3& v) {
     return Vec3(u.el(1)*v.el(2) - v.el(1)*u.el(2),
                 v.el(0)*u.el(2) - v.el(2)*u.el(0),

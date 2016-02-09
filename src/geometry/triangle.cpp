@@ -33,7 +33,7 @@ bool Triangle::intersect(const Ray& r, LocalGeometry& lgeo) {
             return false;
 
         else {
-            lgeo.normal = transform.inverse().transpose() * normal;
+            lgeo.normal = submatrix(transform).inverse().transpose() * normal;
             lgeo.point = transform * point;
             lgeo.geo = this;
             return true;

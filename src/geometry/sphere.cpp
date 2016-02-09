@@ -45,7 +45,7 @@ bool Sphere::intersect(const Ray& r, LocalGeometry& lgeo) {
         Vec3 normal = as_vec3(point-center).normalize();
 
         lgeo.geo = this;
-        lgeo.normal = transform.inverse().transpose() * normal;
+        lgeo.normal = submatrix(transform).inverse().transpose() * normal;
         lgeo.point = transform * point;
         return true;
     }

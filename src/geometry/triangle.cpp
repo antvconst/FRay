@@ -10,18 +10,18 @@ Triangle::Triangle(const Vec4& A, const Vec4& B, const Vec4& C) :
 bool Triangle::intersect(const Ray& r, LocalGeometry& lgeo) {
     Mat4 TInv = this->transform.inverse();
     Vec3 dir = as_vec3(TInv*as_vec4(r.direction));
-    Vec3 origin = as_vec3(TInv*r.origin);
+    Vec4 origin = TInv*r.origin;
 
 
     if (cross(dir, normal).is_zero())
         return false;
 
-    double t = dot(origin-A, normal)/dot(dir, normal);
+    double t = dot(as_vec3(origin-A), normal)/dot(dir, normal);
 
     if (t < 0.0)
         return false;
     else {
-        Vec4 point = origin + (dir * t);
+        Vec4 point = origin + (as_vec4(dir) * t);
 
         Vec3 bar_coords = barycentric_coordinates(A, B, C, point);
 
